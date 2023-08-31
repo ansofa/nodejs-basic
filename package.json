@@ -1,19 +1,20 @@
 {
-  "name": "nodejs-basic",
+  "name": "basicnode",
   "version": "1.0.0",
-  "description": "latihan-nodejs",
+  "description": "latihannodec",
   "main": "index.js",
-  "scripts": {
+  "scripts": { 
+    "start" : "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ansofa/nodejs-basic.git"
+    "url": "git+https://github.com/Verrelp/basicnode.git"
   },
-  "author": "",
+  "author": "verrelp",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ansofa/nodejs-basic/issues"
+    "url": "https://github.com/Verrelp/basicnode/issues"
   },
-  "homepage": "https://github.com/ansofa/nodejs-basic#readme"
+  "homepage": "https://github.com/Verrelp/basicnode#readme"
 }

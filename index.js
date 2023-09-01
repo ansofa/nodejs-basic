@@ -27,7 +27,7 @@ const server = http.createServer(async (req, res) => {
           res.end("Mamalia Berhasil Ditambahkan");
         } catch (error) {
           res.writeHead(400, { "Content-Type": "text/plain" });
-          res.end("Error parsing JSON data");
+          res.end(error.message);
         }
       });
       break;

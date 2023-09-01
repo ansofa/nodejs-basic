@@ -2,7 +2,6 @@ const MamaliaController = require("./class/controller/mamalia.controller");
 
 // Ini import module HTTP
 const http = require("http");
-const { parse } = require("querystring");
 
 const server = http.createServer(async (req, res) => {
   const method = req.method;

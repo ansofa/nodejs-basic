@@ -2,22 +2,34 @@ const MamaliaController = require("./class/controller/mamalia.controller");
 
 // Ini import module HTTP
 const http = require("http");
+const { parse } = require("querystring");
 
 const server = http.createServer(async (req, res) => {
   const method = req.method;
+  const mamaliaController = new MamaliaController();
   switch (method) {
     case "GET":
-      const mamaliaController = new MamaliaController();
       const mamalias = await mamaliaController.getAll();
-      // console.log(mamalias);
       res.setHeader("Content-Type", "application/json");
       res.end(JSON.stringify(mamalias, null, 2));
       break;
 
     case "POST":
-      const body = req.body;
-      res.setHeader("Content-Type", "application/json");
-      res.end(JSON.stringify(body, null, 2));
+      let requestBody = "";
+      req.on("data", (chunk) => {
+        requestBody += chunk;
+      });
+      req.on("end", async () => {
+        try {
+          const jsonData = JSON.parse(requestBody);
+          await mamaliaController.store(jsonData);
+          res.writeHead(200, { "Content-Type": "text/plain" });
+          res.end("Mamalia Berhasil Ditambahkan");
+        } catch (error) {
+          res.writeHead(400, { "Content-Type": "text/plain" });
+          res.end("Error parsing JSON data");
+        }
+      });
       break;
 
     default:

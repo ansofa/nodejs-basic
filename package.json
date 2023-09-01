@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "latihannodec",
   "main": "index.js",
-  "scripts": { 
-    "start" : "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Verrelp/basicnode/issues"
   },
-  "homepage": "https://github.com/Verrelp/basicnode#readme"
+  "homepage": "https://github.com/Verrelp/basicnode#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }

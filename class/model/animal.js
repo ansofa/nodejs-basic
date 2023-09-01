@@ -7,7 +7,7 @@ class Animal {
   }
 
   suaraAnimal() {
-    console.log("ROar");
+    console.log("Rawrrr");
   }
 
   async connect() {
